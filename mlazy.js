@@ -1,7 +1,3 @@
-/**
- * @author: Jason.占友伟 zhanyouwei@icloud.com
- * Created on 16/3/21.
- */
 
 (function (root, factory) {
 	if (typeof define === 'function' && define.amd) {
@@ -25,7 +21,10 @@
 
 	function _isShow(el) {
 		var coords = el.getBoundingClientRect();
+		console.log(( coords.top));
+		console.log((root.innerHeight || document.documentElement.clientHeight),"aaa");
 		return ( (coords.top >= 0 && coords.left >= 0 && coords.top) <= (root.innerHeight || document.documentElement.clientHeight) + parseInt(offset));
+		//滚动区域wrapper的高度判断
 	}
 
 	function _loadImage() {
@@ -35,8 +34,10 @@
 				el.src = el.getAttribute('data-src');
 				el.className = el.className.replace(new RegExp("(\\s|^)" + _selector.substring(1, _selector.length) + "(\\s|$)"), " ");
 				imgList.splice(i, 1);
+				//bs.refresh();
 			}
 		}
+		//bs.refresh();
 	}
 
 	function _delay() {
@@ -44,6 +45,7 @@
 		delay = setTimeout(function () {
 			_loadImage();
 		}, lazyTime);
+		bs.refresh();
 	}
 
 	function mlazy(selector, options) {

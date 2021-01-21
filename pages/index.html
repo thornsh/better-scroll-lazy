@@ -29,10 +29,10 @@
         <div>石室诗士施氏，嗜狮，</div>
         <img class="m-lazyload" data-src="https://placeimg.com/140/140/any">
       </div>
-      <div>
+      <!-- <div>
         <div>石室诗士施氏，嗜狮，</div>
         <img class="m-lazyload" data-src="http://i.pravatar.cc/128">
-      </div>
+      </div> -->
       <div>
         <div>石室诗士施氏，嗜狮，</div>
         <img class="m-lazyload" data-src="https://placeimg.com/140/140/any">
@@ -143,4 +143,7 @@
   new mlazy(".m-lazyload",{
     iScroll:bs
   });
+  setTimeout(() => {
+    bs.refresh();
+  }, 2000);
 </script>
